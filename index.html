@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Palindrome birthday</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-div">
+        <h1>Enter Your birthdate to check if it is Palindrome</h1>
+        <p>
+          It will check birthdate in 4 formats
+          yyyy-mm-dd,dd-mm-yyyy,mm-dd-yy,m-dd-yyyy
+        </p>
+        <p>
+          e.g. If your birthdate is 02 Sep 2021 then app will check for
+          20210902,02092021,090221,9022021
+        </p>
+      </div>
 
+      <input type="date">
 
+      <button>check</button>
 
+      <div class="output">
+        <div class="loader display"></div>
+        <div class="content display"> Result will show here</div>
+      </div>
+    </main>
 
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

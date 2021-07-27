@@ -1,4 +1,9 @@
 'use strict'
+const inputDate = document.querySelector("input");
+const checkBtn = document.querySelector("button");
+const outputval = document.querySelector(".content");
+const loader = document.querySelector(".loader");
+
 const datesInMonth=[31,28,31,30,31,30,31,31,30,31,30,31];
 //function declaration
 function checkPalindrome(date)
@@ -15,10 +20,12 @@ function checkPalindrome(date)
      else
      {
          let [nextdate,diff] = findNextDate(inputDate,inputMonth,inputYear);
-         output =  `Awww! Your birthdate is not palindrome. Nearest palindrome date is ${nextdate} You missed it by ${diff} days.`;
+         output =  `Awww! Your birthdate is not palindrome. Nearest palindrome date is ${nextdate} \n You missed it by ${diff} days.`;
 
      }
-     console.log(output);
+     outputval.textContent = output;
+     outputval.classList.toggle("display");
+     loader.classList.toggle("display");
 
 }
 function checkAllCombination(yyyy, mm, dd){
@@ -96,13 +103,13 @@ function findNextDate(date, month, year){
            backwardDate =backwardDate-1;
             if(backwardDate<1){
                backwardMonth =backwardMonth-1;
-                if(mmNo2 < 1){
+                if(backwardMonth < 1){
                    backwardMonth = 12;
                     backwardYear = backwardYear-1;
                     if(backwardYear<1){
                         break;
                     }
-                   backwardDate = datesInMonth[mmNo2-1];
+                   backwardDate = datesInMonth[backwardMonth-1];
                 }
             }
             let yyString = backwardYear.toString();
@@ -125,7 +132,12 @@ function findNextDate(date, month, year){
    
 }
 
+checkBtn.addEventListener("click",function()
+{   let value = inputDate.value;
+    loader.classList.toggle("display");
+    setTimeout(function(){checkPalindrome(value)},3000);
+})
 
-console.log(checkPalindrome("2021-12-12"))
+
 
 
