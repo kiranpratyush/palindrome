@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
     box-sizing: border-box;
     margin:0px;
     padding:0px;
 }
+body{
+    font-family:"Lato",sans-serif;
+}
 
 .main-div{
-    background-image: url(image.jpg);
+    background-image:linear-gradient(to bottom, rgba(0,0,0, 0.52), rgba(55,48,163,0.32)),url(image.jpg);
     padding:2rem;
     background-position: center;
     background-size: cover;
@@ -86,3 +90,26 @@ button {
     display:none;
 }
 
+
+footer {
+    background-color: white;
+    width: 100%;
+    padding: 1.2rem;
+  }
+  
+  footer p {
+    text-align: center;
+    padding-top: 1.2rem;
+  }
+  footer ul {
+    padding-top: 1.2rem;
+    padding-left: 0px;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  footer ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0px 1.2rem;
+    padding-bottom: 10px;
+  }
