@@ -12,6 +12,7 @@ function checkPalindrome(date)
     const inputYear = dateArray[0];
     const inputMonth = dateArray[1];
     const inputDate = dateArray[2];
+
      let isPalindrome = checkAllCombination(inputYear,inputMonth,inputDate)
      if(isPalindrome)
      {
@@ -24,8 +25,8 @@ function checkPalindrome(date)
 
      }
      outputval.textContent = output;
-     outputval.classList.toggle("display");
-     loader.classList.toggle("display");
+     outputval.classList.remove("display");
+     loader.classList.add("display");
 
 }
 function checkAllCombination(yyyy, mm, dd){
@@ -134,8 +135,21 @@ function findNextDate(date, month, year){
 
 checkBtn.addEventListener("click",function()
 {   let value = inputDate.value;
-    loader.classList.toggle("display");
+    
+    if(!outputval.classList.contains('display'))
+    {
+        outputval.classList.add("display");
+
+    }
+    if(value.split("-")[0]===''||value.split("-")===''||value.split("-")==='')
+    {
+        outputval.textContent ="Enter correct values of Date "
+        outputval.classList.remove("display");
+    }
+    else{
+        loader.classList.remove("display");
     setTimeout(function(){checkPalindrome(value)},3000);
+    }
 })
 
 
